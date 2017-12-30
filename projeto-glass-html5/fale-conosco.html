@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Tudo sobre o google glass</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
+    <script src="_javascript/funcoes.js"> </script>
+</head>
+<script>
+    function calcTotal() {
+        var qtd = parseInt(document.getElementById('cQtd').value);
+        total = qtd * 1500;
+        document.getElementById('cPt').value = total;
+    }
+
+</script>
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+            </hgroup>
+            <img id="icone" src="_imagens/contato.png"></img>
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul>
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="specs.html">Especificações</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="fotos.html">Fotos</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="multimidia.html">Multimídia</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="fale-conosco.html">Fale conosco</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <article id="noticia">
+            <header id="cabecalho-noticia">
+                <hgroup>
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Matheus Barbosa</h2>
+                    <h3 class="direita">Atualizado em 29/Dezembro/2017</h3>
+                </hgroup>
+            </header>
+
+            <form method="post" id="fContato" name="fContato" oninput="calcTotal();">
+                <fieldset id="usuario">
+                    <legend>Identificação do Usuário</legend>
+                    <p>
+                        <label for="cNome"> Nome:
+                            <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" />
+                        </label>
+                    </p>
+                    <p>
+                        <label for="cSenha"> Senha:
+                            <input type="password" name="tSenha" id="cSenha" size="20" maxlength="8" placeholder="Digite sua senha" />
+                        </label>
+                    </p>
+                    <p>
+                        <label for="cEmail"> E-mail:
+                            <input type="email" name="tEmail" id="cEmail" size="20" maxlength="30" />
+                        </label>
+                    </p>
+                    <fieldset id="sexo">
+                        <legend>Sexo:</legend>
+                        <input type="radio" name="tSexo" id="cMasc" />
+                        <label for="cMasc">Masculino</label>
+                        <input type="radio" name="tSexo" id="cFem" />
+                        <label for="cFem">Feminino</label>
+                    </fieldset>
+                    <p>
+                        <label for="cDataNasc"> Data de Nascimento:
+                            <input type="date" name="tdataNasc" id="cDataNasc" size="8" maxlength="15" />
+                        </label>
+                    </p>
+                </fieldset>
+                <fieldset id="endereco">
+                    <legend>Endereço do Usuário</legend>
+                    <p>
+                        <label for="cRua"> Logradouro:
+                            <input type="text" name="tRua" id="cRua" size="20" maxlength="80" />
+                        </label>
+                    </p>
+                    <p>
+                        <label for="cNum"> Número:
+                            <input type="number" name="tNum" id="cNum" min="0" max="99999" />
+                        </label>
+                    </p>
+                    <p>
+                        <label for="cEstado"> Estado:</label>
+                        <select name="tEstado" id="cEstado">
+                            <optgroup label="Região Norte">
+                                <option value="AC">Acre</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="PA">Pará</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="TO">Tocantins</option>
+                            </optgroup>
+                            <optgroup label="Região Nordeste">
+                                <option value="AL">Alagoas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="SE">Sergipe</option>
+                            </optgroup>
+                            <optgroup label="Região Centro-Oeste">
+                                <option value="DF">Distrito Federal</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                            </optgroup>
+                            <optgroup label="Região Suldeste">
+                                <option value="ES">Espírito Santo</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="SP">São Paulo</option>
+                            </optgroup>
+                            <optgroup label="Região Sul">
+                                <option value="PR">Paraná</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="SC">Santa Catarina</option>
+                            </optgroup>
+                        </select>
+
+                    </p>
+                    <p>
+                        <label for="cCidade"> Cidade:
+                            <input type="text" name="tCidade" id="cCidade" size="20" maxlength="50" placeholder="Sua Cidade" />
+                        </label>
+                    </p>
+                </fieldset>
+                <fieldset id="mensagem">
+                    <legend>Mensagem do Usuário</legend>
+                    <p>
+                        <label for="cUrg">Grau de Urgência:</label>
+                        <br/>
+                        <sub> Min</sub>
+                        <input type="range" name="tUrg" id="cUrg" min="0" max="10" />
+                        <sub>Max </sub>
+                    </p>
+
+                    <p>
+                        <label for="cMsg">Mensagem: </label>
+                        <textarea name="tMsg" id="cMsg" cols="30" rows="5" placeholder="Digite sua mensagem"></textarea> </p>
+                </fieldset>
+                <fieldset id="pedido">
+                    <legend>Quero um Google Glass</legend>
+                    <p>
+                        <input type="checkbox" name="tPed" id="cPed" checked/>
+                        <label for="cPed">
+                            Gostaria de adquirir um Google Glass quando disponível
+                        </label>
+                    </p>
+                    <p>
+                        <label for="cCor">Cor:</label>
+                        <input type="color" name="tCor" id="cCor">
+                    </p>
+                    <p>
+                        <label for="cQtd">Quantidade:</label>
+                        <input type="number" name="tQtd" id="cQtd" min="1" max="5" value="0" />
+                    </p>
+                    <p>
+                        <label for="cPt">Preço Total: R$</label>
+                        <input type="text" name="tPt" id="cPt" placeholder="Total a pagar" readonly/>
+                    </p>
+
+
+                </fieldset>
+
+                <input type="image" name="tEnviar" id="cEnviar" src="_imagens/botao-enviar.png" />
+
+            </form>
+
+        </article>
+        </section>
+
+        <footer id="rodape">
+            <p>Copyright &copy; 2017 - by Matheus Barbosa
+                <br/>
+                <a href="http://facebook.com" target="blank">Facebook </a>|
+                <a href="http://twitter.com" target="blank">Twitter</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
